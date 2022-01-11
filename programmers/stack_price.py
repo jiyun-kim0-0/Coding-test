@@ -1,5 +1,7 @@
 
 prices = [1,2,3,2,3]
+answer = [0]*len(prices)
+print(answer)
 
 def solution(prices):
     
