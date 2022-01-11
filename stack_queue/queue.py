@@ -26,3 +26,44 @@ print(queue_list)
 
 queue_list.pop()
 print(queue_list)
+
+#위 두가지 방법의 경우 다소 효율성이 떨어짐
+
+"""
+#세번째 방법
+from queue import Queue
+
+que = Queue()
+
+#데이터 넣기
+que.put(1)
+print(que)
+
+que.put(2)
+print(que)
+
+que.put(3)
+print(que)
+
+#데이터 삭제
+que.get()
+print(que)
+
+que.get()
+print(que)
+
+que.get()
+print(que) """
+
+from collections import deque
+
+queue = deque([7, 8, 9])
+print(queue)
+
+queue.append(10)
+print(queue)
+
+#제거
+queue.popleft()
+print(queue)
+

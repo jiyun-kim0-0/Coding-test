@@ -1,5 +1,4 @@
 num_list = list(map(int, input().split()))
-
 #list / map
 num = list(map(int,input().split()))
 
