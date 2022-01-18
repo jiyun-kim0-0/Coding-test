@@ -56,6 +56,8 @@ que.get()
 print(que) """
 
 from collections import deque
+#deque 라이브러리 이용 (덱)
+#list 자료형 이용시 시간복잡도가 높아짐.
 
 queue = deque([7, 8, 9])
 print(queue)
@@ -63,7 +65,11 @@ print(queue)
 queue.append(10)
 print(queue)
 
-#제거
+#제거시 popleft 메서드 이용
 queue.popleft()
+print(queue)
+
+print(queue) #먼저 들어온 순서대로 출력함.
+queue.reverse() #역순
 print(queue)
 
