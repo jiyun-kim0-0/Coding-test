@@ -1,21 +1,26 @@
 #최단거리 문제 해결에 사용한다.
 #너비 우선 탐색
-#큐 이용
+#큐 이용 - 선입선출
 from collections import deque
 
 #BFS 메서드 정의
 def bfs(graph,start,visited):
     
     queue = deque([start]) #deque 라이브러리
-    
     visited[start] = True #현재 노드 방문처리
     
+    #줄맞추기 들여쓰기 주의
     #큐가 빌때까지 반복함
     while queue:
         v=queue.popleft() #큐에서 하나의 원소 뽑아서 출력함 #popleft 원소 제거시 사용하는 메서드
-    
-
-
+        print(v,end=' ')
+        
+        #아직 방문하지 않은 인접한 원소들 큐에 삽입
+        for i in graph[v]:
+            if not visited[i]: #방문하지 않았다면,
+                queue.append(i) #원소 큐에 삽입
+                visited[i] = True #방문처리
+            
 
 # 2차원 연결 리스트를 이용해 각 노드에 연결된 정보를 표현함.
 graph = [
@@ -32,3 +37,6 @@ graph = [
 
 # 1차원 리스트를 이용해 각 노드가 방문된 정보를 표현
 visited = [False] * 9 # False로 정보 초기화 # 노드 1~8 (인덱스 0을 포함해서 * 9)
+
+#함수 호출
+bfs(graph,1,visited)
