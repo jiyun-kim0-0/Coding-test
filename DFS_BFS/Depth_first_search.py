@@ -5,11 +5,11 @@ def dfs(graph,v,visited):
     
     #현재 노드 방문 처리
     visited[v] = True
-    print(v,end=' ')
+    print(v,end=' ') #해당 노드를 방문했다는 의미로 노드 번호 출력 / 
     
     #현재 노드와 연결된 다른 노드를 재귀적으로 방문함.
     for i in graph[v]: #그래프 리스트의 인덱스
-        if not visited[i]: #방문 안 했다면, ?
+        if not visited[i]: #인접된 노드가 방문 되지 않은 상태라면, 해당 노드에 대해서 재귀함수를 이용하여 방문
             dfs(graph,i,visited) #재귀함수
             
 
